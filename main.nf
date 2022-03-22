@@ -232,8 +232,6 @@ workflow harmony_scenic {
 
 
 // run single_sample, output a scope loom file
-workflow single_sample {
-
     include {
         single_sample as SINGLE_SAMPLE;
     } from './workflows/single_sample' params(params)
@@ -241,6 +239,10 @@ workflow single_sample {
         PUBLISH as PUBLISH_SINGLE_SAMPLE_SCOPE;
         PUBLISH as PUBLISH_SINGLE_SAMPLE_SCANPY;
     } from "./src/utils/workflows/utils" params(params)
+    
+    workflow single_sample {
+
+
 
     getDataChannel | SINGLE_SAMPLE
 
