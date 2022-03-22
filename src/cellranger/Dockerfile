@@ -1,12 +1,12 @@
 FROM debian:buster-slim
 
-ENV CELLRANGER_VER 5.0.1
+ENV CELLRANGER_VER 6.1.2
 
 # Pre-downloaded files:
 # cellranger: https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest
-COPY cellranger-$CELLRANGER_VER.tar.gz /opt/cellranger-$CELLRANGER_VER.tar.gz
+COPY ../../../private_softwares/10xGenomics/cellranger-$CELLRANGER_VER.tar.gz /opt/cellranger-$CELLRANGER_VER.tar.gz
 # bcl2fastq2: https://support.illumina.com/downloads/bcl2fastq-conversion-software-v2-20.html
-COPY bcl2fastq2-v2-20-0-linux-x86-64.zip /tmp/bcl2fastq2-v2-20-0-linux-x86-64.zip
+COPY ../../../private_softwares/Illumina/bcl2fastq2-v2-20-0-linux-x86-64.zip /tmp/bcl2fastq2-v2-20-0-linux-x86-64.zip
 
 RUN apt-get update && \
     # Need to run ps
